@@ -2,15 +2,26 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Video</title>
+  <title>My Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       background: #000;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
     }
+
+    .video {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     iframe {
       width: 100%;
       height: 100%;
@@ -20,11 +31,32 @@
 </head>
 <body>
 
-<iframe
-  src="https://www.youtube.com/embed/PjufX-lQBp4?controls=1&rel=0"
-  allow="encrypted-media; fullscreen"
-  allowfullscreen>
-</iframe>
+  <!-- VIDEO 1 -->
+  <div class="video">
+    <iframe
+      src="https://www.youtube.com/embed/PjufX-lQBp4?playsinline=1&controls=1&rel=0"
+      allow="encrypted-media; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- VIDEO 2 (ví dụ, thay ID nếu có) -->
+  <div class="video">
+    <iframe
+      src="https://www.youtube.com/embed/xIBXosaZscU?playsinline=1&controls=1&rel=0"
+      allow="encrypted-media; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div class="video">
+    <iframe
+      src="https://www.youtube.com/embed/pOvZ0baWdOg?playsinline=1&controls=1&rel=0"
+      allow="encrypted-media; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
 
 </body>
 </html>
