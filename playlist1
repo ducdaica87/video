@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playlist Player</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Playlist</title>
 <style>
-body { background:#000; color:#fff; text-align:center }
-#player { max-width: 100%; aspect-ratio: 16/9; margin:auto }
-button { padding:10px 20px; margin:5px }
+body {
+  margin: 0;
+  background: #000;
+}
+.player {
+  position: relative;
+  padding-top: 56.25%;
+}
+iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
 </head>
 <body>
 
-<div id="player"></div>
-
-<button onclick="player.previousVideo()">◀ Prev</button>
-<button onclick="player.nextVideo()">Next ▶</button>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    playerVars: {
-      listType: 'playlist',
-      list: 'PLxxxxxx',
-      autoplay: 1,
-      rel: 0
-    }
-  });
-}
-</script>
+<div class="player">
+  <iframe
+    src="https://www.youtube.com/embed/videoseries?list=PLxxxxxx&autoplay=1&rel=0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
 
 </body>
 </html>
