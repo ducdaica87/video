@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlist Player</title>
+<style>
+body { background:#000; color:#fff; text-align:center }
+#player { max-width: 100%; aspect-ratio: 16/9; margin:auto }
+button { padding:10px 20px; margin:5px }
+</style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<button onclick="player.previousVideo()">◀ Prev</button>
+<button onclick="player.nextVideo()">Next ▶</button>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    playerVars: {
+      listType: 'playlist',
+      list: 'PLxxxxxx',
+      autoplay: 1,
+      rel: 0
+    }
+  });
+}
+</script>
+
+</body>
+</html>
